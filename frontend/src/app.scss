@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Montserrat', sans-serif;
+}
+p, span, a, li, strong, div{
+  font-family: 'Inter', sans-serif;
+}
+.container {
+  max-width: 1410px;
+  position: relative;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.btn {
+  display: inline-block;
+  width: 210px;
+  height: 60px;
+  font-weight: 700;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 60px;
+  background-color: #F47D32;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media (max-width: 500px) {
+  .btn {
+    display: inline-block;
+    width: 160px;
+    height: 50px;
+    border-radius: 8px;
+    text-align: center;
+    line-height: 50px;
+    background-color: #F47D32;
+    color: #fff;
+    text-decoration: none;
+  }
+  .container {
+    max-width: 1410px;
+    margin: 0 auto;
+    padding: 0 5px;
+  }
+}
+.custom-dropdown{
+  &__control{
+    background-color: #efefef !important;
+    border: none !important;
+    min-height: 60px !important;
+    border-radius: 8px !important;
+    width: 100%;
+  }
+  &__menu{
+    width: 100% !important;
+    background-color: #efefef !important;
+  }
+  &__option {
+    cursor: pointer !important;
+    &--is-focused{
+      background-color: #efefef !important;
+    }
+  }
+  &__single-value{
+    color: #000 !important;
+  }
+  &__value-container{
+    padding: 10px 0 10px 20px !important;
+    cursor: pointer !important;
+  }
+  &__input-container{
+    color: #0000 !important;
+  }
+  &__indicators{
+    cursor: pointer !important;
+  }
+  &__indicator{
+    svg{
+      color: #000 !important;
+      :hover{
+        color: #000 !important;
+      }
+    }
+    &:hover{
+      color: #0000 !important;
+    }
+  }
+}

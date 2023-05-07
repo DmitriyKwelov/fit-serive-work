@@ -1,0 +1,33 @@
+.headerContent{
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 0 70px 0;
+  .logo{
+    width: 200px;
+  }
+  .btns{
+    display: flex;
+  }
+}
+@media (max-width: 750px) {
+  .headerContent{
+    .btns{
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+@media (max-width: 500px) {
+  .headerContent{
+    .logo{
+      width: 150px;
+    }
+  }
+}
+@media (max-width: 360px) {
+  .headerContent{
+    .logo{
+      width: 120px;
+    }
+  }
+}

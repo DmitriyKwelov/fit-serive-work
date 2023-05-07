@@ -1,0 +1,27 @@
+.block{
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 300px;
+  height: 300px;
+  border: 1px #858585 dashed;
+  border-radius: 12px;
+  &.uploaded{
+    border: none;
+  }
+  .UploadedImage{
+
+  }
+  p{
+    margin-top: 10px;
+  }
+}
+.uploaded{
+  width: 100%;
+  height: 100%;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
