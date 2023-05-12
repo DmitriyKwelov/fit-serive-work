@@ -5,11 +5,12 @@ interface IProps {
     value: string
     onChange: (e: string) => void
     type?: string
+    error?: boolean
 }
 
-const Index: FC<IProps> = ({value, onChange, type}) => {
+const Index: FC<IProps> = ({value, onChange, type, error}) => {
     return (
-        <input className={styles.input} value={value} onChange={(e) => onChange(e.target.value)} type={type ? type : "text"}/>
+        <input className={error ? `${styles.input} ${styles.error}` : styles.input} value={value} onChange={(e) => onChange(e.target.value)} type={type ? type : "text"}/>
     );
 };
 

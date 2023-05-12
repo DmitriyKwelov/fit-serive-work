@@ -15,6 +15,12 @@
     font-size: 18px;
   }
 }
+.buttonsBlock{
+  display: flex;
+  div{
+    margin-right: 20px;
+  }
+}
 @media (max-width: 600px) {
   .title{
     font-size: 42px;

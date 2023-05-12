@@ -1,0 +1,122 @@
+.content{
+  padding: 20px 60px;
+  h2{
+    text-align: center;
+    font-size: 64px;
+    margin-bottom: 20px;
+  }
+  p{
+    text-align: center;
+    opacity: .6;
+    margin: 0 0 5px 0;
+    font-size: 20px;
+  }
+  .socialMedia{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    .circle{
+      border: 1px solid #000000;
+      border-radius: 100%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 20px;
+    }
+  }
+}
+@media (max-width: 780px) {
+  .content{
+    padding: 10px 30px;
+    h2{
+      text-align: center;
+      font-size: 52px;
+      margin-bottom: 20px;
+    }
+    p{
+      text-align: center;
+      opacity: .6;
+      margin: 0 0 5px 0;
+      font-size: 20px;
+    }
+    .socialMedia{
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      .circle{
+        border: 1px solid #000000;
+        border-radius: 100%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 20px;
+      }
+    }
+  }
+}
+@media (max-width: 600px) {
+  .content{
+    padding: 10px 20px;
+    h2{
+      text-align: center;
+      font-size: 38px;
+      margin-bottom: 20px;
+    }
+    p{
+      text-align: center;
+      opacity: .6;
+      margin: 0 0 5px 0;
+      font-size: 18px;
+    }
+    .socialMedia{
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      .circle{
+        border: 1px solid #000000;
+        border-radius: 100%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 20px;
+      }
+    }
+  }
+}
+@media (max-width: 500px) {
+  .content{
+    padding: 5px 10px;
+    h2{
+      text-align: center;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+    p{
+      text-align: center;
+      opacity: .6;
+      margin: 0 0 5px 0;
+      font-size: 16px;
+    }
+    .socialMedia{
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      .circle{
+        border: 1px solid #000000;
+        border-radius: 100%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 20px;
+      }
+    }
+  }
+}

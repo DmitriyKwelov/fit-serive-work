@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import styles from "./Vacancies.module.scss"
 import people from './../../assets/people.png'
 import $api from "../../http";
@@ -20,19 +20,19 @@ interface IVacancies {
 const Index = () => {
 
     const [vacancies, setVacancies] = useState<IVacancies[]>();
-    const {selectCity} = useSelector((state: RootState) => state.city)
-    const [isModalOpen, setIsModalOpen] = useState(false)
+    const {selectCity} = useSelector((state: RootState) => state.city);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     useEffect(() => {
         const getVacancies = async () => {
             try {
                 if(selectCity){
                     const {data} = await $api.get(`/vacancy/city/${selectCity.id}`);
-                    setVacancies(data)
+                    setVacancies(data.sort(() => Math.random() - 0.5))
                     console.log(data)
                 } else {
                     const {data} = await $api.get('/vacancy');
-                    setVacancies(data)
+                    setVacancies(data.sort(() => Math.random() - 0.5))
                     console.log(data)
                 }
             } catch (e) {

@@ -19,7 +19,7 @@ app.use(cookieParser({
 }));
 app.use(express.json());
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: ['http://localhost:3000', 'http://87.236.16.59', 'https://fit-work.store', 'http://fit-work.store'],
     credentials: true,
 }));
 app.use('/api', router);
