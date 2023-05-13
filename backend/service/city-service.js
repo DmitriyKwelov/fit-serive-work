@@ -12,7 +12,11 @@ class CityService {
     async getAll(){
         const citiesData = await CityModel.find();
         const citiesDto = citiesData.map(city => new CityDto(city));
-        console.log(citiesDto)
+        return citiesDto
+    }
+    async getById(id){
+        const citiesData = await CityModel.findById(id);
+        const citiesDto = new CityDto(citiesData);
         return citiesDto
     }
 }

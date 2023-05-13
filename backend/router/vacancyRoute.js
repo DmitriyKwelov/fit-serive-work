@@ -4,9 +4,9 @@ const router = new Router()
 
 
 router.post('/create', vacancyController.create);
+router.post('/update', vacancyController.updateById);
 router.get('/', vacancyController.getAll);
 router.get('/:id', vacancyController.getById);
-router.post('/update', vacancyController.updateById);
 router.get('/city/:id', vacancyController.getByCityId);
 router.delete('/:id', vacancyController.deleteById);
 

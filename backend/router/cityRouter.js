@@ -5,5 +5,6 @@ const router = new Router()
 
 router.post('/create', cityController.create);
 router.get('/', cityController.getAll);
+router.get('/:id', cityController.getById);
 
 module.exports = router

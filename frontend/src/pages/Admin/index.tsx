@@ -45,6 +45,7 @@ const Index = () => {
             {vacancies &&
                 vacancies.map(vacancy =>
                     <VacancyItem
+                        key={vacancy.id}
                         id={vacancy.id}
                         title={vacancy.title}
                         price={vacancy.price}

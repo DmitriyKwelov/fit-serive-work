@@ -19,6 +19,15 @@ class CityController {
             return next(ApiError.badRequest(e.message))
         }
     }
+    async getById(req, res, next){
+        try {
+            const {id} = req.params
+            const cityData = await cityService.getById(id)
+            return res.json(cityData);
+        } catch (e) {
+            return next(ApiError.badRequest(e.message))
+        }
+    }
 }
 
 module.exports = new CityController();

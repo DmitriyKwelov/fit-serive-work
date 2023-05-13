@@ -3,7 +3,11 @@ export interface IVacancy {
     title: string;
     img: string;
     price: string;
-    city: string
+    city: ICity
     shortDescription: string
     fullDescription: string
+}
+export interface ICity{
+    name: string
+    id: string
 }

@@ -6,6 +6,7 @@ import {Link} from "react-router-dom";
 import trashIcon from '../../assets/trash.svg'
 import editIcon from '../../assets/edit.svg'
 import remarkBreaks from 'remark-breaks';
+import config from "../../config";
 
 interface IProps {
     id: string
@@ -28,10 +29,10 @@ const Index: FC<IProps> = ({shortDescription, title, img, price, id, isAdminPage
                     <p className={styles.price}>{price}</p>
                 </div>
                 <ReactMarkdown remarkPlugins={[remarkBreaks]} children={shortDescription}/>
-                <Link className="btn" style={{marginTop: 20}} to={`/vacancy/${id}`}>К вакансиям</Link>
+                <Link className="btn" style={{marginTop: 20}} to={`/vacancy/${id}`}>Подробнее</Link>
             </div>
             <div className={styles.rightContent}>
-                <img className={styles.picture} src={`http://localhost:5000/uploads/images/${img}`} alt=""/>
+                <img className={styles.picture} src={`${config.API_BASE_URL}/uploads/images/${img}`} alt=""/>
             </div>
             {isAdminPage &&
                 <div className={styles.btnControl}>

@@ -38,7 +38,6 @@ class VacancyController {
         }
     }
     async getByCityId(req, res, next){
-        console.log(4234234)
         try {
             const {id} = req.params
             const vacancyData = await vacancyService.getByCityId(id)

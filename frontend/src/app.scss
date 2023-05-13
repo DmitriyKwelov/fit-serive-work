@@ -64,7 +64,7 @@ p, span, a, li, strong, div, button{
     }
   }
   &__single-value{
-    color: #000 !important;
+    color: #000000 !important;
   }
   &__value-container{
     padding: 10px 0 10px 20px !important;
@@ -72,6 +72,9 @@ p, span, a, li, strong, div, button{
   }
   &__input-container{
     color: #0000 !important;
+  }
+  &__input{
+    color: rgba(0, 0, 0, 1) !important;
   }
   &__indicators{
     cursor: pointer !important;

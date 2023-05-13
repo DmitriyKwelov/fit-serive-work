@@ -8,8 +8,8 @@ interface IOption {
 }
 
 interface DropdownYearProps {
-    setOptionValue: (e: IOption) => void
-    value: IOption | null
+    setOptionValue: (e: IOption[]) => void
+    value: IOption[] | null
 }
 
 const Index: FC<DropdownYearProps> = ({setOptionValue, value}) => {
@@ -27,7 +27,7 @@ const Index: FC<DropdownYearProps> = ({setOptionValue, value}) => {
         getCities()
     }, [])
 
-    const onChange = (e: IOption | any) => {
+    const onChange = (e: IOption[] | any) => {
         if(e){
             setOptionValue(e)
         }
@@ -42,7 +42,7 @@ const Index: FC<DropdownYearProps> = ({setOptionValue, value}) => {
             options={options}
             onChange={onChange}
             value={value}
-            isMulti={false}
+            isMulti={true}
             isSearchable={true}
             placeholder="Выберите город"
         />

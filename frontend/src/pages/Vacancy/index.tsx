@@ -21,7 +21,6 @@ const Index = () => {
             try {
                 const {data} = await $api.get(`/vacancy/${id}`)
                 setVacancy(data)
-                console.log(data)
             } catch (e){
                 alert(e)
             }
@@ -47,7 +46,7 @@ const Index = () => {
                 </div>
             </div>
             <ContactModal modalActive={isActiveModalFormInfo} setModalActive={setIsActiveModalInfo}/>
-            <FormModal modalActive={isActiveModalForm} setModalActive={setIsActiveModalForm}/>
+            <FormModal modalActive={isActiveModalForm} setModalActive={setIsActiveModalForm} city={vacancy.city}/>
         </>
     );
 };

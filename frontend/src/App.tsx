@@ -3,25 +3,22 @@ import {Link, Route, Routes} from "react-router-dom";
 import Home from "./pages/Home";
 import Vacancies from "./pages/Vacancies";
 import Vacancy from "./pages/Vacancy";
-import './app.scss'
-import {useSelector} from "react-redux";
-import {RootState, useAppDispatch} from "./store/store";
+import './app.scss';
+import {useAppDispatch} from "./store/store";
 import {checkAuth} from "./store/slices/authSlice";
 import Login from "./pages/Login";
 import AdminRoute from "./utils/roter/AdminRoute";
 import Admin from "./pages/Admin";
 import AdminAddVacancy from "./pages/AdminAddVacancy";
 import AdminAddCity from "./pages/AdminAddCity";
-import styles from "./pages/Vacancies/Vacancies.module.scss";
-import logo from "./assets/logo.svg";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import $api from "./http";
+import {setSelectedCity} from "./store/slices/citySlice";
 
 const App = () => {
-
     const [checkValue, setCheckValue] = useState(false)
 
-    const {user, isAuth} = useSelector((state: RootState) => state.auth);
     const dispatch = useAppDispatch();
 
     useEffect(() => {
@@ -35,6 +32,23 @@ const App = () => {
             }
         }
         check()
+    }, [])
+
+    useEffect(() => {
+        const cityId = localStorage.getItem('city')
+        if(cityId){
+            const check = async () => {
+                try {
+                    const {data} = await $api.get(`/city/${cityId}`)
+                    dispatch(
+                        setSelectedCity({id: data.id, name: data.name})
+                    )
+                } catch (e) {
+                    console.log(e)
+                }
+            }
+            check()
+        }
     }, [])
 
     if (checkValue === false) {

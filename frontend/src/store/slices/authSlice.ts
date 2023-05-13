@@ -1,7 +1,8 @@
-import {createAsyncThunk, createSlice, PayloadAction} from '@reduxjs/toolkit'
+import {createAsyncThunk, createSlice} from '@reduxjs/toolkit'
 import $api from "../../http";
 import {IUser} from "../../models/IUser";
 import axios from "axios";
+import config from "../../config";
 
 export enum Status {
     LOADING = 'loading',
@@ -37,8 +38,7 @@ export const login = createAsyncThunk<UserState, IParamsLogin>('auth/login', asy
 })
 export const checkAuth = createAsyncThunk<UserState>('auth/checkAuth', async (thunkAPI) => {
     try {
-        const response = await axios.get('http://localhost:5000/api/refresh', {withCredentials: true,})
-        console.log(response.data)
+        const response = await axios.get(`${config.API_BASE_URL}/api/refresh`, {withCredentials: true,})
         return response.data;
     } catch (e) {
         // @ts-ignore

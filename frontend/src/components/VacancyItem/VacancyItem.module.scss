@@ -32,6 +32,7 @@
     }
   }
   .rightContent{
+    margin-left: 30px;
     .picture{
       width: 600px;
     }
@@ -85,6 +86,7 @@
 @media (max-width: 900px) {
   .vacanciesItem {
     .rightContent {
+      margin-left: 0;
       .picture {
         display: none;
       }

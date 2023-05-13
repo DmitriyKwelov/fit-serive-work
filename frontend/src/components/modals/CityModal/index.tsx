@@ -9,6 +9,7 @@ import {useSelector} from "react-redux";
 interface IProps {
     modalActive: boolean
     setModalActive: (e: boolean) => void
+    scrollToTarget: () => void
 }
 
 interface IOption {
@@ -16,7 +17,7 @@ interface IOption {
     value: string
 }
 
-const Index: FC<IProps> = ({modalActive, setModalActive}) => {
+const Index: FC<IProps> = ({modalActive, setModalActive, scrollToTarget}) => {
     const {selectCity} = useSelector((state: RootState) => state.city)
     const [city, setCity] = useState<IOption | null>(null)
 
@@ -32,7 +33,9 @@ const Index: FC<IProps> = ({modalActive, setModalActive}) => {
             dispatch(
                 setSelectedCity({id: city.value, name: city.label})
             )
+            localStorage.setItem('city', city.value);
             setModalActive(false)
+            scrollToTarget()
         }
     }
 
